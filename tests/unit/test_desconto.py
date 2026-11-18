@@ -33,3 +33,9 @@ def test_limites_de_valor_cheio_e_encargos(vencimento, pagamento, esperado):
     valor = calcular_valor_pagamento(Decimal("1000.00"), vencimento, pagamento)
 
     assert valor == esperado
+
+
+def test_desconto_de_meio_centavo_arredonda_para_cima():
+    valor = calcular_valor_pagamento(Decimal("0.10"), VENCIMENTO, date(2026, 10, 31))
+
+    assert valor == Decimal("0.09")
