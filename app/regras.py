@@ -78,3 +78,8 @@ def novo_status(valor_do_titulo: Decimal, saldo_restante: Decimal) -> str:
     if saldo_restante < valor_do_titulo:
         return "parcial"
     return "aberto"
+
+
+def calcular_valor_pagamento(valor: Decimal, vencimento: date, pagamento: date) -> Decimal:
+    """Regra 9: calcula o valor do título pago na data informada."""
+    return valor
