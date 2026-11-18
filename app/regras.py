@@ -85,4 +85,6 @@ def calcular_valor_pagamento(valor: Decimal, vencimento: date, pagamento: date) 
     if (vencimento - pagamento).days >= 10:
         desconto = (valor * Decimal("0.05")).quantize(CENTAVO, rounding=ROUND_HALF_UP)
         return valor - desconto
+    if pagamento > vencimento:
+        return valor + calcular_encargos(valor, vencimento, pagamento)
     return valor
