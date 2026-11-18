@@ -1,0 +1,11 @@
+ID,Regra/Cenário,Entrada,Resultado esperado,Resultado observado no código correto,Tipo
+A1-01,Encargos antes do vencimento,"R$ 1.000,00; pagamento 09/11/2026; vencimento 10/11/2026",R$ 0,00,R$ 0,00,Limite inferior
+A1-02,Encargos no vencimento,"R$ 1.000,00; pagamento 10/11/2026; vencimento 10/11/2026",R$ 0,00,R$ 0,00,Fronteira
+A1-03,Um dia de atraso,"R$ 1.000,00; pagamento 11/11/2026; vencimento 10/11/2026",R$ 20,33,R$ 20,33,Fronteira
+A1-04,Trinta dias de atraso,"R$ 1.000,00; pagamento 10/12/2026; vencimento 10/11/2026",R$ 29,90,R$ 29,90,Limite
+A1-05,Vencimento sábado e pagamento segunda,"Vencimento 14/11/2026; pagamento 16/11/2026",Sem encargos,Sem encargos,Fim de semana
+A1-06,Vencimento sábado e pagamento terça,"Vencimento 14/11/2026; pagamento 17/11/2026",Encargos de 1 dia,Encargos de 1 dia,Fim de semana
+A1-07,Parcelamento com resto,"R$ 100,00 em 3 parcelas","R$ 33,34 + R$ 33,33 + R$ 33,33","R$ 33,34 + R$ 33,33 + R$ 33,33",Valor de fronteira
+A1-08,Valor de título zero,"Título com valor R$ 0,00",Rejeitar,Rejeitado,Partição inválida
+A1-09,Baixa maior que saldo,"Saldo R$ 100,00; baixa R$ 100,01",Rejeitar sem alterar saldo,Rejeitada pela regra,Partição inválida
+A1-10,Pagamento parcial,"Saldo R$ 100,00; baixa R$ 40,00",Aceitar e manter status parcial,Aceito e status parcial,Partição válida

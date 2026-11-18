@@ -62,3 +62,7 @@ python migrar.py
 flask --app app.web run --port 8000 --debug
 python -m pytest -v
 ```
+
+## Entregas das aulas 1 a 6
+
+Índice dos artefatos, casos de teste e comandos para conferir cada entrega: [`docs/entregas/README.md`](docs/entregas/README.md).
