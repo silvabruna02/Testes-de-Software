@@ -4,7 +4,8 @@ on: [push, pull_request]
 
 jobs:
   testes:
-    runs-on: ubuntu-latest
+    # Playwright 1.56 ainda não oferece suporte ao Ubuntu 26.04 (ubuntu-latest).
+    runs-on: ubuntu-24.04
 
     services:
       postgres:
