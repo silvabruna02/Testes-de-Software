@@ -82,4 +82,7 @@ def novo_status(valor_do_titulo: Decimal, saldo_restante: Decimal) -> str:
 
 def calcular_valor_pagamento(valor: Decimal, vencimento: date, pagamento: date) -> Decimal:
     """Regra 9: calcula o valor do título pago na data informada."""
+    if (vencimento - pagamento).days >= 10:
+        desconto = (valor * Decimal("0.05")).quantize(CENTAVO, rounding=ROUND_HALF_UP)
+        return valor - desconto
     return valor
